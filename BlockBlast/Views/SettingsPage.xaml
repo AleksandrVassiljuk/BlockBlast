@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BlockBlast.Views.SettingsPage"
+    Title="Settings"
+    BackgroundColor="{AppThemeBinding Light=#F2F5FA, Dark=#10182E}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <!-- Pealkiri -->
+            <Label
+                x:Name="SettingsTitleLabel"
+                Text="SEADED"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="{AppThemeBinding Light=#17233D, Dark=White}"/>
+
+            <Label
+                x:Name="SettingsSubtitleLabel"
+                Text="Muuda mängu seadeid"
+                FontSize="14"
+                HorizontalOptions="Center"
+                TextColor="{AppThemeBinding Light=#52627C, Dark=#AAB8D5}"/>
+
+            <!-- Mängija nimi -->
+            <Border
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E2A47}"
+                StrokeThickness="0"
+                Padding="18"
+                StrokeShape="RoundRectangle 16">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        x:Name="PlayerNameLabel"
+                        Text="MÄNGIJA NIMI"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#17233D, Dark=White}"/>
+
+                    <Entry
+                        x:Name="PlayerNameEntry"
+                        Placeholder="Sisesta mängija nimi"
+                        MaxLength="25"
+                        TextColor="{AppThemeBinding Light=#17233D, Dark=White}"
+                        PlaceholderColor="#8898B3"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Heli -->
+            <Border
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E2A47}"
+                StrokeThickness="0"
+                Padding="18"
+                StrokeShape="RoundRectangle 16">
+
+                <Grid ColumnDefinitions="*,Auto">
+
+                    <VerticalStackLayout Spacing="5">
+
+                        <Label
+                            x:Name="SoundLabel"
+                            Text="HELI"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="{AppThemeBinding Light=#17233D, Dark=White}"/>
+
+                        <Label
+                            x:Name="SoundDescriptionLabel"
+                            Text="Mängu heliefektid"
+                            FontSize="13"
+                            TextColor="#8898B3"/>
+
+                    </VerticalStackLayout>
+
+                    <Switch
+                        x:Name="SoundSwitch"
+                        Grid.Column="1"
+                        OnColor="#377DFF"
+                        VerticalOptions="Center"/>
+
+                </Grid>
+            </Border>
+
+            <!-- Teema -->
+            <Border
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E2A47}"
+                StrokeThickness="0"
+                Padding="18"
+                StrokeShape="RoundRectangle 16">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        x:Name="ThemeLabel"
+                        Text="TEEMA"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#17233D, Dark=White}"/>
+
+                    <Picker
+                        x:Name="ThemePicker"
+                        Title="Vali teema"
+                        TextColor="{AppThemeBinding Light=#17233D, Dark=White}">
+
+                        <Picker.Items>
+                            <x:String>Dark</x:String>
+                            <x:String>Light</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Keel -->
+            <Border
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E2A47}"
+                StrokeThickness="0"
+                Padding="18"
+                StrokeShape="RoundRectangle 16">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        x:Name="LanguageLabel"
+                        Text="KEEL"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#17233D, Dark=White}"/>
+
+                    <Picker
+                        x:Name="LanguagePicker"
+                        Title="Vali keel"
+                        TextColor="{AppThemeBinding Light=#17233D, Dark=White}">
+
+                        <Picker.Items>
+                            <x:String>Eesti</x:String>
+                            <x:String>English</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Salvestamine -->
+            <Button
+                x:Name="SaveSettingsButton"
+                Text="SALVESTA SEADED"
+                HeightRequest="52"
+                BackgroundColor="#377DFF"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="14"
+                Clicked="SaveButton_Clicked"/>
+
+            <Button
+                x:Name="BackButton"
+                Text="TAGASI MÄNGU"
+                HeightRequest="50"
+                BackgroundColor="#344563"
+                TextColor="White"
+                CornerRadius="14"
+                Clicked="BackButton_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

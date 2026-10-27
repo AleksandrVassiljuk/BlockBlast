@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+	</resheader>
+
+	<data name="GameTitle" xml:space="preserve">
+    <value>BLOCK BLAST</value>
+  </data>
+	<data name="PuzzleGame" xml:space="preserve">
+    <value>PUSLEMÄNG</value>
+  </data>
+	<data name="Score" xml:space="preserve">
+    <value>PUNKTID</value>
+  </data>
+	<data name="Best" xml:space="preserve">
+    <value>REKORD</value>
+  </data>
+	<data name="Combo" xml:space="preserve">
+    <value>KOMBO</value>
+  </data>
+	<data name="Bonus" xml:space="preserve">
+    <value>BOONUS</value>
+  </data>
+	<data name="SelectBlock" xml:space="preserve">
+    <value>VALI KLOTS</value>
+  </data>
+	<data name="NewGame" xml:space="preserve">
+    <value>UUS MÄNG</value>
+  </data>
+	<data name="PauseResume" xml:space="preserve">
+    <value>PAUS / JÄTKA</value>
+  </data>
+	<data name="Records" xml:space="preserve">
+    <value>REKORDID</value>
+  </data>
+	<data name="Settings" xml:space="preserve">
+    <value>SEADED</value>
+  </data>
+	<data name="HowToPlay" xml:space="preserve">
+    <value>KUIDAS MÄNGIDA?</value>
+  </data>
+	<data name="Step1" xml:space="preserve">
+    <value>Vali üks kolmest klotsist.</value>
+  </data>
+	<data name="Step2" xml:space="preserve">
+    <value>Vajuta mängulauale, et klots paigutada.</value>
+  </data>
+	<data name="Step3" xml:space="preserve">
+    <value>Täida read või veerud ja kogu punkte.</value>
+  </data>
+	<data name="Step4" xml:space="preserve">
+    <value>Tee järjest kombosid ja saa boonuseid!</value>
+  </data>
+	<data name="Step5" xml:space="preserve">
+    <value>Kui ükski klots ei mahu, on mäng läbi.</value>
+  </data>
+	<data name="PlayerName" xml:space="preserve">
+    <value>MÄNGIJA NIMI</value>
+  </data>
+	<data name="Sound" xml:space="preserve">
+    <value>HELI</value>
+  </data>
+	<data name="Theme" xml:space="preserve">
+    <value>TEEMA</value>
+  </data>
+	<data name="Language" xml:space="preserve">
+    <value>KEEL</value>
+  </data>
+	<data name="SaveSettings" xml:space="preserve">
+    <value>SALVESTA SEADED</value>
+  </data>
+	<data name="BackToGame" xml:space="preserve">
+    <value>TAGASI MÄNGU</value>
+  </data>
+</root>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+	</resheader>
+
+	<data name="GameTitle" xml:space="preserve">
+    <value>BLOCK BLAST</value>
+  </data>
+	<data name="PuzzleGame" xml:space="preserve">
+    <value>PUZZLE GAME</value>
+  </data>
+	<data name="Score" xml:space="preserve">
+    <value>SCORE</value>
+  </data>
+	<data name="Best" xml:space="preserve">
+    <value>BEST</value>
+  </data>
+	<data name="Combo" xml:space="preserve">
+    <value>COMBO</value>
+  </data>
+	<data name="Bonus" xml:space="preserve">
+    <value>BONUS</value>
+  </data>
+	<data name="SelectBlock" xml:space="preserve">
+    <value>SELECT BLOCK</value>
+  </data>
+	<data name="NewGame" xml:space="preserve">
+    <value>NEW GAME</value>
+  </data>
+	<data name="PauseResume" xml:space="preserve">
+    <value>PAUSE / RESUME</value>
+  </data>
+	<data name="Records" xml:space="preserve">
+    <value>RECORDS</value>
+  </data>
+	<data name="Settings" xml:space="preserve">
+    <value>SETTINGS</value>
+  </data>
+	<data name="HowToPlay" xml:space="preserve">
+    <value>HOW TO PLAY?</value>
+  </data>
+	<data name="Step1" xml:space="preserve">
+    <value>Select one of the three blocks.</value>
+  </data>
+	<data name="Step2" xml:space="preserve">
+    <value>Tap the board to place the block.</value>
+  </data>
+	<data name="Step3" xml:space="preserve">
+    <value>Complete rows or columns to earn points.</value>
+  </data>
+	<data name="Step4" xml:space="preserve">
+    <value>Make combos to earn bonus points!</value>
+  </data>
+	<data name="Step5" xml:space="preserve">
+    <value>The game ends when no blocks fit.</value>
+  </data>
+	<data name="PlayerName" xml:space="preserve">
+    <value>PLAYER NAME</value>
+  </data>
+	<data name="Sound" xml:space="preserve">
+    <value>SOUND</value>
+  </data>
+	<data name="Theme" xml:space="preserve">
+    <value>THEME</value>
+  </data>
+	<data name="Language" xml:space="preserve">
+    <value>LANGUAGE</value>
+  </data>
+	<data name="SaveSettings" xml:space="preserve">
+    <value>SAVE SETTINGS</value>
+  </data>
+	<data name="BackToGame" xml:space="preserve">
+    <value>BACK TO GAME</value>
+  </data>
+</root>

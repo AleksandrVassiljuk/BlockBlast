@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+
+		<!-- Windowsi platvorm -->
+		<TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+
+		<!-- MAUI seaded -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>BlockBlast</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Rakenduse nimi -->
+		<ApplicationTitle>BlockBlast</ApplicationTitle>
+
+		<!-- Rakenduse ID -->
+		<ApplicationId>com.companyname.blockblast</ApplicationId>
+
+		<!-- Versioon -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- Windowsi rakendus ilma MSIX paketita -->
+		<WindowsPackageType>None</WindowsPackageType>
+
+		<!-- Windowsi minimaalne versioon -->
+		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+
+	</PropertyGroup>
+
+	<!-- MAUI ressursid -->
+	<ItemGroup>
+
+		<!-- Rakenduse ikoon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Pildid -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+
+		<!-- Fondid -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Heli ja muud failid -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+
+	</ItemGroup>
+
+	<!-- NuGet paketid -->
+	<ItemGroup>
+
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+
+		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
+
+		<!-- SQLite andmebaas -->
+		<PackageReference Include="sqlite-net-pcl" Version="1.11.285" />
+
+	</ItemGroup>
+
+	<!-- Lokaliseerimine -->
+	<ItemGroup>
+
+		<!-- Eesti ja inglise keele ressursifailid -->
+		<EmbeddedResource Update="Localization\AppResources.resx" LogicalName="BlockBlast.Resources.Localization.AppResources.resources" />
+
+		<EmbeddedResource Update="Localization\AppResources.en.resx" LogicalName="BlockBlast.Resources.Localization.AppResources.en.resources" />
+
+	</ItemGroup>
+
+</Project>

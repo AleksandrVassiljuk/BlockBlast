@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BlockBlast.Views.RecordsPage"
+    Title="Records"
+    BackgroundColor="#10182E">
+
+    <Grid
+        Padding="20"
+        RowDefinitions="Auto,Auto,*,Auto"
+        RowSpacing="18">
+
+        <!-- Pealkiri -->
+        <VerticalStackLayout
+            Grid.Row="0"
+            Spacing="6">
+
+            <Label
+                Text="RECORDS"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="Sinu parimad mängutulemused"
+                FontSize="14"
+                TextColor="#AAB8D5"
+                HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+        <!-- Parim tulemus -->
+        <Border
+            Grid.Row="1"
+            BackgroundColor="#263759"
+            Padding="20"
+            StrokeThickness="0"
+            StrokeShape="RoundRectangle 16">
+
+            <VerticalStackLayout Spacing="8">
+
+                <Label
+                    Text="BEST SCORE"
+                    FontSize="15"
+                    TextColor="#AAB8D5"
+                    HorizontalOptions="Center"/>
+
+                <Label
+                    x:Name="BestScoreLabel"
+                    Text="0"
+                    FontSize="38"
+                    FontAttributes="Bold"
+                    TextColor="#FFD166"
+                    HorizontalOptions="Center"/>
+
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Tulemuste nimekiri -->
+        <CollectionView
+            x:Name="RecordsList"
+            Grid.Row="2"
+            SelectionMode="None">
+
+            <CollectionView.EmptyView>
+                <Label
+                    Text="Tulemusi veel pole. Mängi esimene mäng!"
+                    TextColor="#AAB8D5"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Border
+                        BackgroundColor="#1E2A47"
+                        StrokeThickness="0"
+                        Padding="15"
+                        Margin="0,5"
+                        StrokeShape="RoundRectangle 12">
+
+                        <Grid ColumnDefinitions="*,Auto"
+                              RowDefinitions="Auto,Auto"
+                              RowSpacing="5">
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="{Binding PlayerName}"
+                                FontSize="17"
+                                FontAttributes="Bold"
+                                TextColor="White"/>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding Score}"
+                                FontSize="22"
+                                FontAttributes="Bold"
+                                TextColor="#FFD166"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Text="{Binding PlayedAt, StringFormat='{0:dd.MM.yyyy HH:mm}'}"
+                                FontSize="12"
+                                TextColor="#AAB8D5"/>
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Tagasi -->
+        <Button
+            Grid.Row="3"
+            Text="BACK TO GAME"
+            BackgroundColor="#377DFF"
+            TextColor="White"
+            FontAttributes="Bold"
+            CornerRadius="14"
+            HeightRequest="52"
+            Clicked="BackButton_Clicked"/>
+
+    </Grid>
+</ContentPage>

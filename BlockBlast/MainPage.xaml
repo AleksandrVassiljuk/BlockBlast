@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BlockBlast.MainPage"
+    Title="Block Blast"
+    BackgroundColor="{AppThemeBinding Light=#F2F5FA, Dark=#10182E}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,25" Spacing="18">
+
+            <!-- Pealkiri -->
+            <Label
+                x:Name="GameTitleLabel"
+                Text="BLOCK BLAST"
+                FontSize="34"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#17233D, Dark=White}"
+                HorizontalOptions="Center"/>
+
+            <Label
+                x:Name="PuzzleGameLabel"
+                Text="PUSLEMÄNG"
+                FontSize="12"
+                CharacterSpacing="4"
+                TextColor="{AppThemeBinding Light=#52627C, Dark=#8EA6D1}"
+                HorizontalOptions="Center"/>
+
+            <!-- Punktid -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                <Border
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E2A47}"
+                    StrokeThickness="0"
+                    Padding="15"
+                    StrokeShape="RoundRectangle 16">
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            x:Name="ScoreTitleLabel"
+                            Text="PUNKTID"
+                            FontSize="13"
+                            TextColor="{AppThemeBinding Light=#52627C, Dark=#AAB8D5}"
+                            HorizontalOptions="Center"/>
+
+                        <Label
+                            Text="{Binding Score}"
+                            FontSize="30"
+                            FontAttributes="Bold"
+                            TextColor="{AppThemeBinding Light=#17233D, Dark=White}"
+                            HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    Grid.Column="1"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E2A47}"
+                    StrokeThickness="0"
+                    Padding="15"
+                    StrokeShape="RoundRectangle 16">
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            x:Name="BestTitleLabel"
+                            Text="REKORD"
+                            FontSize="13"
+                            TextColor="{AppThemeBinding Light=#52627C, Dark=#AAB8D5}"
+                            HorizontalOptions="Center"/>
+
+                        <Label
+                            Text="{Binding BestScore}"
+                            FontSize="30"
+                            FontAttributes="Bold"
+                            TextColor="#D69E00"
+                            HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <!-- Kombo ja boonus -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                <Border
+                    BackgroundColor="{AppThemeBinding Light=#E2EAF5, Dark=#263759}"
+                    StrokeThickness="0"
+                    Padding="12"
+                    StrokeShape="RoundRectangle 14">
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            x:Name="ComboTitleLabel"
+                            Text="KOMBO"
+                            FontSize="13"
+                            TextColor="{AppThemeBinding Light=#52627C, Dark=#AAB8D5}"
+                            HorizontalOptions="Center"/>
+
+                        <Label
+                            Text="{Binding Combo, StringFormat='x{0}'}"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#D69E00"
+                            HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    Grid.Column="1"
+                    BackgroundColor="{AppThemeBinding Light=#E2EAF5, Dark=#263759}"
+                    StrokeThickness="0"
+                    Padding="12"
+                    StrokeShape="RoundRectangle 14">
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            x:Name="BonusTitleLabel"
+                            Text="BOONUS"
+                            FontSize="13"
+                            TextColor="{AppThemeBinding Light=#52627C, Dark=#AAB8D5}"
+                            HorizontalOptions="Center"/>
+
+                        <Label
+                            Text="{Binding LastBonus, StringFormat='+{0}'}"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#18A879"
+                            HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <!-- Mängulaud -->
+            <Border
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E2A47}"
+                Stroke="{AppThemeBinding Light=#C8D5E7, Dark=#354B76}"
+                StrokeThickness="2"
+                Padding="8"
+                HorizontalOptions="Center"
+                StrokeShape="RoundRectangle 16">
+
+                <Grid
+                    x:Name="GameGrid"
+                    RowSpacing="3"
+                    ColumnSpacing="3"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+            </Border>
+
+            <!-- Klotsid -->
+            <Label
+                x:Name="SelectBlockLabel"
+                Text="VALI KLOTS"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#17233D, Dark=White}"
+                HorizontalOptions="Center"/>
+
+            <Grid
+                x:Name="BlocksGrid"
+                ColumnDefinitions="*,*,*"
+                ColumnSpacing="10"
+                HeightRequest="115"
+                HorizontalOptions="Fill"/>
+
+            <!-- Mängunupud -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                <Button
+                    x:Name="NewGameButton"
+                    Text="UUS MÄNG"
+                    HeightRequest="52"
+                    BackgroundColor="#377DFF"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="14"
+                    Command="{Binding NewGameCommand}"/>
+
+                <Button
+                    x:Name="PauseButton"
+                    Grid.Column="1"
+                    Text="PAUS / JÄTKA"
+                    HeightRequest="52"
+                    BackgroundColor="{AppThemeBinding Light=#D8E3F2, Dark=#344563}"
+                    TextColor="{AppThemeBinding Light=#17233D, Dark=White}"
+                    FontAttributes="Bold"
+                    CornerRadius="14"
+                    Command="{Binding PauseCommand}"/>
+            </Grid>
+
+            <!-- Rekordid ja seaded -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                <Button
+                    x:Name="RecordsButton"
+                    Text="REKORDID"
+                    HeightRequest="50"
+                    BackgroundColor="{AppThemeBinding Light=#E2EAF5, Dark=#263759}"
+                    TextColor="{AppThemeBinding Light=#17233D, Dark=#FFD166}"
+                    CornerRadius="14"
+                    Clicked="RecordsButton_Clicked"/>
+
+                <Button
+                    x:Name="SettingsButton"
+                    Grid.Column="1"
+                    Text="SEADED"
+                    HeightRequest="50"
+                    BackgroundColor="{AppThemeBinding Light=#D8E3F2, Dark=#344563}"
+                    TextColor="{AppThemeBinding Light=#17233D, Dark=White}"
+                    CornerRadius="14"
+                    Clicked="SettingsButton_Clicked"/>
+            </Grid>
+
+            <!-- Juhend -->
+            <Border
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1A2742}"
+                StrokeThickness="0"
+                Padding="14"
+                StrokeShape="RoundRectangle 12">
+
+                <VerticalStackLayout Spacing="6">
+
+                    <Label
+                        x:Name="HowToPlayLabel"
+                        Text="KUIDAS MÄNGIDA?"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#17233D, Dark=#FFD166}"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        x:Name="Step1Label"
+                        Text="1. Vali üks kolmest klotsist."
+                        TextColor="{AppThemeBinding Light=#52627C, Dark=#CBD5E8}"/>
+
+                    <Label
+                        x:Name="Step2Label"
+                        Text="2. Vajuta mängulauale, et klots paigutada."
+                        TextColor="{AppThemeBinding Light=#52627C, Dark=#CBD5E8}"/>
+
+                    <Label
+                        x:Name="Step3Label"
+                        Text="3. Täida read või veerud ja kogu punkte."
+                        TextColor="{AppThemeBinding Light=#52627C, Dark=#CBD5E8}"/>
+
+                    <Label
+                        x:Name="Step4Label"
+                        Text="4. Tee järjest kombosid ja saa boonuseid!"
+                        TextColor="{AppThemeBinding Light=#52627C, Dark=#CBD5E8}"/>
+
+                    <Label
+                        x:Name="Step5Label"
+                        Text="5. Kui ükski klots ei mahu, on mäng läbi."
+                        TextColor="{AppThemeBinding Light=#52627C, Dark=#CBD5E8}"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
